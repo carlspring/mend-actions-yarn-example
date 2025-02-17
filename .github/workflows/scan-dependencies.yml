@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 env:
   MEND_URL: ${{ secrets.MEND_URL }}
@@ -38,13 +39,13 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Set up Mend CLI
-        uses: carlspring/mend-actions/setup@feat/scan-dependencies
+        uses: carlspring/mend-actions/setup@master
 
       - name: Login into Mend.io
-        uses: carlspring/mend-actions/login@feat/scan-dependencies
+        uses: carlspring/mend-actions/login@master
 
       - name: Perform scan
-        uses: carlspring/mend-actions/scan-dependencies@feat/scan-dependencies
+        uses: carlspring/mend-actions/scan-dependencies@master
         with:
           scope: "*//CTNR - FORME/mend-actions-yarn-example"
 
