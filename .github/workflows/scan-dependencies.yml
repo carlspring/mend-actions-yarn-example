@@ -48,7 +48,7 @@ jobs:
       - name: Perform scan
         uses: carlspring/mend-actions/scan-dependencies@v1
         with:
-          scope: "*//GitHub Actions Tests/mend-actions-yarn-example"
+          scope: "*//GitHub Actions Tests//mend-actions-yarn-example"
 
       - name: Upload SARIF report
         uses: github/codeql-action/upload-sarif@v3
